@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/App/drawer_menu.dart';
+import 'package:flutter_auth/Screens/App/drawermenu.dart';
 
 import '../Login/components/background.dart';
 
@@ -77,4 +77,5 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 }
 
+// ignore: non_constant_identifier_names
 _GatNewsAPI() {}
