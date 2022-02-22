@@ -14,7 +14,7 @@ class NewsPage extends StatefulWidget {
 
 class _NewsPageState extends State<NewsPage> {
   var jsonData;
-  List<ListoftemplesData> dataList = [];
+  List<TempleListData> dataList = [];
 
   Future<String> _GatData() async {
     var respones = await Http.get(Uri.parse(
@@ -23,7 +23,7 @@ class _NewsPageState extends State<NewsPage> {
     jsonData = json.decode(utf8.decode(respones.bodyBytes));
 
     for (var data in jsonData) {
-      ListoftemplesData news = ListoftemplesData(
+      TempleListData news = TempleListData(
           data['อันดับ'],
           data['ชื่อ'],
           data['พระเกจิ'],
@@ -39,7 +39,7 @@ class _NewsPageState extends State<NewsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List of Temples"),
+        title: Text("Temple List"),
       ),
       drawer: DrawerMenu(),
       body: Background(
@@ -131,13 +131,13 @@ class _NewsPageState extends State<NewsPage> {
   }
 }
 
-class ListoftemplesData {
+class TempleListData {
   String rating;
   String name;
   String monk;
   String detail;
   double latitude;
   double longtitude;
-  ListoftemplesData(this.rating, this.name, this.monk, this.detail,
-      this.latitude, this.longtitude);
+  TempleListData(this.rating, this.name, this.monk, this.detail, this.latitude,
+      this.longtitude);
 }
